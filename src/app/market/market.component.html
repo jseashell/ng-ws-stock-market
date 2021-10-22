@@ -1,0 +1,14 @@
+<table id="market">
+  <tr>
+    <th>Symbol</th>
+    <th>Price</th>
+    <th>Day Change</th>
+    <th>Open</th>
+  </tr>
+  <tr *ngFor="let stock of stocks" \>
+    <td>{{ stock.symbol }}</td>
+    <td>{{ stock.price }}</td>
+    <td>{{ stock.dayChangePercent }}</td>
+    <td>{{ stock.startPrice }}</td>
+  </tr>
+</table>
