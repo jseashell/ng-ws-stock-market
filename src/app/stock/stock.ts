@@ -1,6 +1,8 @@
 export interface Stock {
   symbol?: string;
-  price?: string;
-  dayChangePercent?: string;
-  startPrice?: string;
+  price?: number;
+  dayChangePercent?: number;
+  startPrice?: number;
+  lastPrice?: number;
+  volatility?: number;
 }

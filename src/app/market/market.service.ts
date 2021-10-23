@@ -9,22 +9,23 @@ import { io } from 'socket.io-client';
 })
 export class MarketService {
   socket = io('http://localhost:3002/market');
-
   public stocks: BehaviorSubject<Stock[]> = new BehaviorSubject([]);
 
-  // this.socket.on('connect', () => {
-  //   console.log('Market connected');
-  // });
+  constructor() {
+    this.socket.on('connect', () => {
+      console.log('Market connected');
+    });
+
+    this.socket.on('disconnect', () => {
+      console.log('Market disconnected');
+    });
+  }
 
   getMarketUpdate(): Observable<Stock[]> {
     this.socket.on('market-update', (data) => {
-      this.stocks.next(data.result);
+      this.stocks.next(data.stocks);
     });
 
     return this.stocks.asObservable();
   }
-
-  // this.socket.on('disconnect', () => {
-  //   console.log('Market disconnected');
-  // });
 }
