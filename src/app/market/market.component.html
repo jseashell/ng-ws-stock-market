@@ -5,10 +5,10 @@
     <th>Day Change</th>
     <th>Open</th>
   </tr>
-  <tr *ngFor="let stock of stocks" \>
+  <tr *ngFor="let stock of stocks">
     <td>{{ stock.symbol }}</td>
-    <td>{{ stock.price }}</td>
-    <td>{{ stock.dayChangePercent }}</td>
-    <td>{{ stock.startPrice }}</td>
+    <td>${{ stock.price.toFixed(2) }}</td>
+    <td>{{ stock.dayChangePercent.toFixed(2) }}%</td>
+    <td>${{ stock.startPrice.toFixed(2) }}</td>
   </tr>
 </table>
