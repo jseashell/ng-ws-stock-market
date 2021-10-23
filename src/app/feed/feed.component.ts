@@ -15,6 +15,9 @@ export class FeedComponent implements OnInit {
 
   ngOnInit(): void {
     this.feedService.onUpdateFeed().subscribe((feedPost) => {
+      if (this.feedPosts.length >= 5) {
+        this.feedPosts.shift();
+      }
       this.feedPosts.push(feedPost);
     });
   }
