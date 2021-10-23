@@ -1,0 +1,14 @@
+div {
+  overflow-y: auto;
+  width: 60vw;
+  min-height: 50vh;
+  max-height: 50vh;
+}
+
+ul {
+  border: 1px solid black;
+}
+
+li {
+  padding: 1vmin;
+}
