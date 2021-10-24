@@ -1,0 +1,20 @@
+div.root {
+  border-bottom: 1px solid black;
+  padding: 1em;
+}
+
+p.title {
+  font-weight: bold;
+}
+
+div.content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 1em 1em 0 1em;
+}
+
+p.text {
+  padding: 0 1em 0 0;
+}

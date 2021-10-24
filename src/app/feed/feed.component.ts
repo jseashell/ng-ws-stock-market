@@ -1,7 +1,7 @@
 import { Component, OnInit, Output } from '@angular/core';
 
-import { FeedPost } from './feed-post';
 import { FeedService } from './feed.service';
+import { Post } from './post/post';
 
 @Component({
   selector: 'app-feed',
@@ -9,13 +9,16 @@ import { FeedService } from './feed.service';
   styleUrls: ['./feed.component.css'],
 })
 export class FeedComponent implements OnInit {
-  @Output() feedPosts: FeedPost[] = [];
+  @Output() posts: Post[] = [];
 
   constructor(private feedService: FeedService) {}
 
   ngOnInit(): void {
-    this.feedService.onUpdateFeed().subscribe((feedPost) => {
-      this.feedPosts.push(feedPost);
+    this.feedService.onUpdateFeed().subscribe((post) => {
+      if (this.posts.length > 30) {
+        this.posts.shift();
+      }
+      this.posts.push(post);
     });
   }
 }

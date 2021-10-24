@@ -1,7 +1,6 @@
 <div>
-  <ul>
-    <li *ngFor="let feedPost of feedPosts.slice().reverse()">
-      {{ feedPost.time }} {{ feedPost.title }}<br />{{ feedPost.text }}
-    </li>
-  </ul>
+  <app-post
+    *ngFor="let post of posts.slice().reverse()"
+    [post]="post"
+  ></app-post>
 </div>

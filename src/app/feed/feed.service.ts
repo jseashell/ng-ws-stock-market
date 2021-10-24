@@ -1,7 +1,7 @@
 import { Observable, ReplaySubject } from 'rxjs';
 
-import { FeedPost } from './feed-post';
 import { Injectable } from '@angular/core';
+import { Post } from './post/post';
 import { io } from 'socket.io-client';
 
 @Injectable({
@@ -9,7 +9,7 @@ import { io } from 'socket.io-client';
 })
 export class FeedService {
   socket = io('http://localhost:3001/feed');
-  public feedPost: ReplaySubject<FeedPost> = new ReplaySubject<FeedPost>();
+  public feedPost: ReplaySubject<Post> = new ReplaySubject<Post>();
 
   constructor() {
     this.socket.on('connect', () => {
@@ -21,7 +21,7 @@ export class FeedService {
     });
   }
 
-  onUpdateFeed(): Observable<FeedPost> {
+  onUpdateFeed(): Observable<Post> {
     this.socket.on('update-feed', (data) => {
       this.feedPost.next(data);
     });
