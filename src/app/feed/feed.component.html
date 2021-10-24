@@ -1,6 +1,6 @@
 <div>
-  <ul *ngIf="feedPosts.length > 0">
-    <li *ngFor="let feedPost of feedPosts">
+  <ul>
+    <li *ngFor="let feedPost of feedPosts.slice().reverse()">
       {{ feedPost.time }} {{ feedPost.title }}<br />{{ feedPost.text }}
     </li>
   </ul>

@@ -1,14 +1,17 @@
 div {
+  height: 100vh;
+
+  min-width: 30em;
+  width: 30em;
+  max-width: 30em;
   overflow-y: auto;
-  width: 60vw;
-  min-height: 50vh;
-  max-height: 50vh;
 }
 
 ul {
   border: 1px solid black;
+  min-height: 100vh;
 }
 
 li {
-  padding: 1vmin;
+  padding: 1em;
 }
