@@ -1,14 +1,22 @@
-<table id="market">
-  <tr>
-    <th>Symbol</th>
-    <th>Price</th>
-    <th>Day Change</th>
-    <th>Open</th>
-  </tr>
-  <tr *ngFor="let stock of stocks">
-    <td>{{ stock.symbol }}</td>
-    <td>${{ stock.price.toFixed(2) }}</td>
-    <td>{{ stock.dayChangePercent.toFixed(2) }}%</td>
-    <td>${{ stock.startPrice.toFixed(2) }}</td>
-  </tr>
-</table>
+<div class="root">
+  <table id="market">
+    <tr>
+      <th>Symbol</th>
+      <th>Price</th>
+      <th>Day Change</th>
+      <th>Open</th>
+    </tr>
+    <tr *ngFor="let stock of stocks">
+      <td class="symbol">{{ stock.symbol }}</td>
+      <td>
+        <span class="sign">$</span
+        ><span class="value">{{ stock.price.toFixed(2) }}</span>
+      </td>
+      <td>{{ stock.dayChangePercent.toFixed(2) }}%</td>
+      <td>
+        <span class="sign">$</span
+        ><span class="value">{{ stock.startPrice.toFixed(2) }}</span>
+      </td>
+    </tr>
+  </table>
+</div>
