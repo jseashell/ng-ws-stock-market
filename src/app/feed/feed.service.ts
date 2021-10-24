@@ -1,4 +1,4 @@
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable, ReplaySubject } from 'rxjs';
 
 import { FeedPost } from './feed-post';
 import { Injectable } from '@angular/core';
@@ -9,7 +9,7 @@ import { io } from 'socket.io-client';
 })
 export class FeedService {
   socket = io('http://localhost:3001/feed');
-  public feedPost: BehaviorSubject<FeedPost> = new BehaviorSubject({});
+  public feedPost: ReplaySubject<FeedPost> = new ReplaySubject<FeedPost>();
 
   constructor() {
     this.socket.on('connect', () => {

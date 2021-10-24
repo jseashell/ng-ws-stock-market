@@ -1,5 +1,5 @@
 <div>
-  <ul>
+  <ul *ngIf="feedPosts.length > 0">
     <li *ngFor="let feedPost of feedPosts">
       {{ feedPost.time }} {{ feedPost.title }}<br />{{ feedPost.text }}
     </li>
