@@ -1,4 +1,4 @@
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, ReplaySubject } from 'rxjs';
 
 import { Injectable } from '@angular/core';
 import { Stock } from '../stock/stock';
@@ -9,7 +9,7 @@ import { io } from 'socket.io-client';
 })
 export class MarketService {
   socket = io('http://localhost:3002/market');
-  public stocks: BehaviorSubject<Stock[]> = new BehaviorSubject([]);
+  public stocks: ReplaySubject<Stock[]> = new ReplaySubject<Stock[]>();
 
   constructor() {
     this.socket.on('connect', () => {

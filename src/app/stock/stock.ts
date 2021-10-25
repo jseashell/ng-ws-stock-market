@@ -5,4 +5,5 @@ export interface Stock {
   startPrice?: number;
   lastPrice?: number;
   volatility?: number;
+  history?: number[];
 }

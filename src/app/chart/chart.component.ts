@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import { Chart, ChartConfiguration, registerables } from 'chart.js';
 import { Stock } from '../stock/stock';
+import { StockService } from '../stock/stock.service';
 
 @Component({
   selector: 'app-chart',
@@ -9,39 +10,40 @@ import { Stock } from '../stock/stock';
   styleUrls: ['./chart.component.css'],
 })
 export class ChartComponent implements OnInit {
-  @Input() stock: Stock;
+  stock: Stock;
 
-  constructor() {
+  constructor(private stockService: StockService) {
     Chart.register(...registerables);
   }
 
   ngOnInit(): void {
-    const labels: string[] = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-    ];
-    const data = {
-      labels: labels,
-      datasets: [
-        {
-          label: 'My First dataset',
-          backgroundColor: 'rgb(255, 99, 132)',
-          borderColor: 'rgb(255, 99, 132)',
-          data: [0, 10, 5, 2, 20, 30, 45],
-        },
-      ],
-    };
+    this.stockService.findOne('FB').subscribe((stock) => {
+      this.stock = stock;
 
-    const config: ChartConfiguration = {
-      type: 'line',
-      data: data,
-      options: {},
-    };
+      const labels: string[] = [];
+      for (let i = 0; i < this.stock.history.length; i++) {
+        labels.push((i + 1).toString());
+      }
 
-    new Chart(<HTMLCanvasElement>document.getElementById('chart'), config);
+      const data = {
+        labels: labels,
+        datasets: [
+          {
+            label: 'My First dataset',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: this.stock.history,
+          },
+        ],
+      };
+
+      const config: ChartConfiguration = {
+        type: 'line',
+        data: data,
+        options: {},
+      };
+
+      new Chart(<HTMLCanvasElement>document.getElementById('chart'), config);
+    });
   }
 }
