@@ -8,9 +8,17 @@ import { Post } from './post';
   styleUrls: ['./post.component.css'],
 })
 export class PostComponent implements OnInit {
-  @Input() @Output() post: Post;
+  @Input() post: Post;
+  preview: string;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.post.text.length > 60) {
+      this.preview = this.post.text.substring(0, 57);
+      this.preview = this.preview.substring(0, this.preview.lastIndexOf(' '));
+
+      this.preview += '...';
+    }
+  }
 }

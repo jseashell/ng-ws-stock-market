@@ -4,9 +4,8 @@ div {
   align-items: center;
   justify-content: flex-start;
   height: 100vh;
-  min-width: 30em;
-  width: 30em;
-  max-width: 30em;
+  width: 20em;
+  max-width: 20em;
   overflow-y: auto;
   border: 1px solid black;
 }
