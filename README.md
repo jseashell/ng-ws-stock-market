@@ -2,6 +2,8 @@
 
 Angular client app for [stock-market-server](https://www.github.com/jseashell/stock-market-server).
 
+![demo](https://github.com/jseashell/stock-market-client/blob/main/demo.gif)
+
 ## Install
 
 ```shell
