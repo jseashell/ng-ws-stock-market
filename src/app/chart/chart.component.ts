@@ -3,7 +3,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Chart, ChartConfiguration, registerables } from 'chart.js';
 import { MarketService } from '../market/market.service';
 import { Stock } from '../stock/stock';
-import { StockService } from '../stock/stock.service';
 
 @Component({
   selector: 'app-chart',
@@ -13,11 +12,9 @@ import { StockService } from '../stock/stock.service';
 export class ChartComponent implements OnInit {
   stock: Stock;
   private chart: Chart = null;
+  private range = 100;
 
-  constructor(
-    private marketService: MarketService,
-    private stockService: StockService
-  ) {
+  constructor(private marketService: MarketService) {
     Chart.register(...registerables);
   }
 
@@ -31,8 +28,14 @@ export class ChartComponent implements OnInit {
           ':' +
           (this.stock.minutes % 60).toFixed(0).padStart(2, '0');
 
+        if (this.chart.data.labels.length > this.range) {
+          this.chart.data.labels.shift();
+        }
         this.chart.data.labels.push(time);
         this.chart.data.datasets.forEach((dataset) => {
+          if (dataset.data.length > this.range) {
+            dataset.data.shift();
+          }
           dataset.data.push(this.stock.price);
         });
         this.chart.update();
@@ -53,6 +56,7 @@ export class ChartComponent implements OnInit {
           type: 'line',
           data: data,
           options: {
+            animation: false,
             elements: {
               point: {
                 radius: 0,
