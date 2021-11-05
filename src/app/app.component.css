@@ -16,6 +16,15 @@
   flex-direction: column;
 }
 
+.appbar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  background: lightblue;
+  color: black;
+  box-shadow: 0 5px 5px 1px grey;
+}
+
 app-feed {
   height: 30vh;
   bottom: 0;

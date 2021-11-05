@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 
 import { Chart, ChartConfiguration, registerables } from 'chart.js';
 import { MarketService } from '../market/market.service';
@@ -10,7 +10,7 @@ import { Stock } from '../stock/stock';
   styleUrls: ['./chart.component.css'],
 })
 export class ChartComponent implements OnInit {
-  stock: Stock;
+  @Output() stock: Stock;
   private chart: Chart = null;
   private range = 100;
 
