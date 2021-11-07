@@ -1,5 +1,5 @@
 div.root {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--dracula-selection);
   padding: 1em;
 }
 

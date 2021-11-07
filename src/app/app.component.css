@@ -1,6 +1,28 @@
-::ng-deep * {
+::ng-deep :root {
   margin: 0;
   padding: 0;
+
+  --dracula-background: #282a36;
+  --dracula-selection: #44475a;
+  --dracula-foreground: #f8f8f2;
+  --dracula-comment: #6272a4;
+  --dracula-cyan: #8be9fd;
+  --dracula-green: #50fa7b;
+  --dracula-orange: #ffb86c;
+  --dracula-pink: #ff79c6;
+  --dracula-purple: #bd93f9;
+  --dracula-red: #ff5555;
+  --dracula-yellow: #f1fa8c;
+}
+
+header {
+  /* width: 100%; */
+  display: flex;
+  justify-content: flex-end;
+  background-color: var(--dracula-selection);
+  color: var(--dracula-foreground);
+  box-shadow: 0 3px 5px 1px grey;
+  padding: 1em;
 }
 
 .content {
@@ -9,20 +31,13 @@
   align-items: flex-start;
   justify-content: flex-start;
   height: 100vh;
+  background-color: var(--dracula-background);
+  color: var(--dracula-foreground);
 }
 
 .focus {
   display: flex;
   flex-direction: column;
-}
-
-.appbar {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  background: lightblue;
-  color: black;
-  box-shadow: 0 5px 5px 1px grey;
 }
 
 app-feed {
