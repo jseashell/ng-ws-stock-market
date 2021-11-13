@@ -62,6 +62,7 @@ export class ChartComponent implements OnInit {
                 radius: 0,
               },
             },
+            responsive: true,
           },
         };
 

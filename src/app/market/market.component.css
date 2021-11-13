@@ -1,13 +1,5 @@
-.root {
-  height: 100vh;
-  max-height: 100vh;
-  overflow-y: auto;
-}
-
 table {
   border-collapse: collapse;
-  min-width: 25em;
-  max-width: 25em;
 }
 
 table,

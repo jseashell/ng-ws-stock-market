@@ -1,6 +1,6 @@
 div.root {
   border-bottom: 1px solid var(--dracula-selection);
-  padding: 1em;
+  padding-left: 1em;
 }
 
 p.title {
@@ -16,6 +16,7 @@ div.content {
 }
 
 p.text {
+  /* Only show the first line of content and hide the rest */
   max-height: 1.2em;
   overflow-y: hidden;
 }
