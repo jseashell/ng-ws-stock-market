@@ -10,6 +10,7 @@ Proof-of-concept Angular client UI for the [nest-ws-stock-market](https://www.gi
 - [Run the App](#run-the-app)
 - [Testing](#testing)
 - [Further Help](#further-help)
+- [License](#license)
 
 </details>
 
