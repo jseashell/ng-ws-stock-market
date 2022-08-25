@@ -2,8 +2,6 @@
 
 Proof-of-concept Angular client UI for the [nest-ws-stock-market](https://www.github.com/jseashell/nest-ws-stocket-market) API.
 
-![demo](https://github.com/jseashell/ng-ws-stock-market/blob/main/demo.gif)
-
 <details>
 <summary>Table of Contents</summary>
 
@@ -14,6 +12,8 @@ Proof-of-concept Angular client UI for the [nest-ws-stock-market](https://www.gi
 - [Further Help](#further-help)
 
 </details>
+
+![demo](https://github.com/jseashell/ng-ws-stock-market/blob/main/demo.gif)
 
 ## Install
 
