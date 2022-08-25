@@ -1,4 +1,4 @@
-# Stock Market Client
+# Angular Web Socket Stock Market
 
 Proof-of-concept Angular client UI for the [nest-ws-stock-market](https://www.github.com/jseashell/nest-ws-stocket-market) API.
 
