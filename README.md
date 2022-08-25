@@ -1,37 +1,57 @@
 # Stock Market Client
 
-Angular client app for [stock-market-server](https://www.github.com/jseashell/stock-market-server).
+Proof-of-concept Angular client UI for the [nest-ws-stock-market](https://www.github.com/jseashell/nest-ws-stocket-market) API.
 
-![demo](https://github.com/jseashell/stock-market-client/blob/main/demo.gif)
+![demo](https://github.com/jseashell/ng-ws-stock-market/blob/main/demo.gif)
+
+<details>
+<summary>Table of Contents</summary>
+
+- [Install](#install)
+- [Build](#build)
+- [Run the App](#run-the-app)
+- [Testing](#testing)
+- [Further Help](#further-help)
+
+</details>
 
 ## Install
 
-```shell
-git clone https://github.com/jseashell/stock-market-client.git
-cd stock-market-client
+```sh
+git clone https://github.com/jseashell/ng-ws-stock-market.git
+cd ng-ws-stock-market
 npm install
 ```
 
 ## Build
 
-Run `npm run build` to build the app in development mode
+```sh
+# Build the app in development mode
+npm run build
+```
 
-## Starting the app
+Artifacts will be kept in `dist/`.
 
-Run `npm run start` to spin up a local dev server to host for the client app. Navigate to `http://localhost:4200/` to view the client. Hot reloading of source files is enabled.
+## Run the App
 
-Run `npm run build` to build the project in development mode. Build artifacts will be stored in `dist/`.
+```
+# Start local dev server
+npm start
+```
+
+Navigate to `http://localhost:4200/` to view the client. Hot reloading is enabled.
 
 ## Testing
 
-### `npm run test`
+```sh
+# Unit tests
+npm test
+```
 
-Executes unit tests via [Karma](https://karma-runner.github.io).
-
-### `npm run e2e`
-
-Executes end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
+## Further Help
 
 - [Angular CLI](https://angular.io/cli)
+
+## License
+
+This software is distributed under the terms of the [MIT License](./LICENSE).
